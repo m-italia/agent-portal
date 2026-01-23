@@ -1,1 +1,125 @@
 
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listini Prezzi – M-Italia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #0b0b0c;
+      --anthracite: #1a1c1f;
+      --card: #23262b;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #d20a10;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; font-family: "Titillium Web", sans-serif; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--black), var(--anthracite));
+      color: var(--text);
+    }
+
+    header {
+      padding: 32px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    header a {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card img {
+      max-height: 60px;
+      object-fit: contain;
+      margin: 0 auto;
+      filter: grayscale(100%);
+    }
+
+    .card a {
+      margin-top: auto;
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      padding: 12px;
+      border-radius: 10px;
+      color: white;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .card a:hover {
+      background: var(--accent);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Listini Prezzi</h1>
+  <a href="index.html">← Torna alla home</a>
+</header>
+
+<main>
+
+  <!-- MILWAUKEE -->
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Milwaukee_Logo.svg" alt="Milwaukee">
+    <a href="pdf/listini/milwaukee-listino.pdf" target="_blank">Apri listino</a>
+  </div>
+
+  <!-- BETA -->
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Beta_Utensili_logo.svg" alt="Beta">
+    <a href="pdf/listini/beta-listino.pdf" target="_blank">Apri listino</a>
+  </div>
+
+  <!-- USAG -->
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/USAG_logo.svg" alt="USAG">
+    <a href="pdf/listini/usag-listino.pdf" target="_blank">Apri listino</a>
+  </div>
+
+</main>
+
+</body>
+</html>
