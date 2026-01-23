@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -6,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Listini Prezzi – M-Italia</title>
 
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -21,7 +21,10 @@
       --radius: 14px;
     }
 
-    * { box-sizing: border-box; font-family: "Titillium Web", sans-serif; }
+    * {
+      box-sizing: border-box;
+      font-family: "Titillium Web", sans-serif;
+    }
 
     body {
       margin: 0;
@@ -30,7 +33,7 @@
     }
 
     header {
-      padding: 32px 20px;
+      padding: 32px 20px 20px;
       text-align: center;
     }
 
@@ -40,9 +43,15 @@
       font-weight: 600;
     }
 
+    header p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     header a {
       display: inline-block;
-      margin-top: 12px;
+      margin-top: 16px;
       color: var(--muted);
       text-decoration: none;
       font-size: 14px;
@@ -53,19 +62,24 @@
       margin: 0 auto;
       padding: 40px 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
     }
 
     .card {
       background: var(--card);
       border-radius: var(--radius);
-      padding: 24px;
+      padding: 28px 24px;
       text-align: center;
       border: 1px solid rgba(255,255,255,0.05);
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
     }
 
     .card img {
@@ -73,53 +87,78 @@
       object-fit: contain;
       margin: 0 auto;
       filter: grayscale(100%);
+      opacity: 0.8;
+      transition: all 0.25s ease;
+    }
+
+    .card:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
     }
 
     .card a {
-      margin-top: auto;
       text-decoration: none;
       border: 1px solid var(--accent);
-      padding: 12px;
+      padding: 12px 16px;
       border-radius: 10px;
       color: white;
       font-weight: 600;
-      transition: 0.2s;
+      transition: all 0.2s ease;
     }
 
     .card a:hover {
       background: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Listini Prezzi</h1>
-  <a href="index.html">← Torna alla home</a>
-</header>
+  <header>
+    <h1>Listini Prezzi</h1>
+    <p>Seleziona il brand per consultare il listino ufficiale</p>
+    <a href="index.html">← Torna alla home</a>
+  </header>
 
-<main>
+  <main>
 
-  <!-- MILWAUKEE -->
-  <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Milwaukee_Logo.svg" alt="Milwaukee">
-    <a href="pdf/listini/milwaukee-listino.pdf" target="_blank">Apri listino</a>
-  </div>
+    <!-- MILWAUKEE -->
+    <div class="card">
+      <img src="loghi/milwaukee.svg" alt="Milwaukee">
+      <a href="listini/milwaukee-listino.pdf" target="_blank">
+        Apri listino Milwaukee
+      </a>
+    </div>
 
-  <!-- BETA -->
-  <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Beta_Utensili_logo.svg" alt="Beta">
-    <a href="pdf/listini/beta-listino.pdf" target="_blank">Apri listino</a>
-  </div>
+    <!-- BETA -->
+    <div class="card">
+      <img src="loghi/beta.svg" alt="Beta">
+      <a href="listini/beta-listino.pdf" target="_blank">
+        Apri listino Beta
+      </a>
+    </div>
 
-  <!-- USAG -->
-  <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/USAG_logo.svg" alt="USAG">
-    <a href="pdf/listini/usag-listino.pdf" target="_blank">Apri listino</a>
-  </div>
+    <!-- USAG -->
+    <div class="card">
+      <img src="loghi/usag.svg" alt="USAG">
+      <a href="listini/usag-listino.pdf" target="_blank">
+        Apri listino USAG
+      </a>
+    </div>
 
-</main>
+  </main>
+
+  <footer>
+    © M-Italia – Area riservata agenti
+  </footer>
 
 </body>
 </html>
