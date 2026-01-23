@@ -1,72 +1,139 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Portale Agenti</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portale Agenti – M-Italia</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 20px;
+    :root {
+      --primary: #111827;
+      --accent: #e11d48;
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --radius: 14px;
     }
-    h1 {
+
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      padding: 32px 20px;
+      background: var(--primary);
+      color: white;
       text-align: center;
     }
-    .section {
-      background: #ffffff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
     }
-    .buttons a {
-      display: inline-block;
-      margin: 10px 10px 0 0;
-      padding: 12px 18px;
-      background: #000;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
+
+    header p {
+      margin-top: 8px;
+      color: #d1d5db;
+      font-size: 15px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
       font-size: 14px;
+      line-height: 1.5;
     }
-    .buttons a:hover {
-      opacity: 0.85;
+
+    .card a {
+      margin-top: auto;
+      text-decoration: none;
+      background: var(--accent);
+      color: white;
+      padding: 12px 16px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .card a:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Portale Materiali Agenti</h1>
+  <header>
+    <h1>Portale Agenti</h1>
+    <p>Listini, cataloghi e materiali sempre aggiornati</p>
+  </header>
 
-  <div class="section">
-    <h2>📄 Listini prezzi</h2>
-    <div class="buttons">
-      <a href="pdf/listini/listino-test.pdf" target="_blank">
-        Visualizza listino
-      </a>
-    </div>
-  </div>
+  <main>
 
-  <div class="section">
-    <h2>📘 Cataloghi</h2>
-    <div class="buttons">
-      <a href="pdf/cataloghi/catalogo-test.pdf" target="_blank">
-        Visualizza catalogo
-      </a>
+    <div class="card">
+      <h2>📄 Listini Prezzi</h2>
+      <p>Scarica i listini aggiornati per prodotti e soluzioni M-Italia.</p>
+      <a href="listini/listino-test.pdf" target="_blank">Apri listino</a>
     </div>
-  </div>
 
-  <div class="section">
-    <h2>📂 Materiale marketing</h2>
-    <div class="buttons">
-      <a href="pdf/marketing/brochure-test.pdf" target="_blank">
-        Visualizza brochure
-      </a>
+    <div class="card">
+      <h2>📘 Cataloghi</h2>
+      <p>Tutta la gamma prodotti in formato PDF consultabile.</p>
+      <a href="cataloghi/catalogo-test.pdf" target="_blank">Apri catalogo</a>
     </div>
-  </div>
+
+    <div class="card">
+      <h2>📢 Materiale Marketing</h2>
+      <p>Brochure, presentazioni e materiali commerciali.</p>
+      <a href="marketing/marketing-test.pdf" target="_blank">Vai ai materiali</a>
+    </div>
+
+  </main>
+
+  <footer>
+    © M-Italia – Portale interno agenti
+  </footer>
 
 </body>
 </html>
